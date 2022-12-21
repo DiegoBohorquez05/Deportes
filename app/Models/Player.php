@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Spatie\Permission\Traits\HasRoles;
 
-class Player extends Model
+class Player extends Model implements JWTSubject
 {
-    use HasFactory;
+    use HasFactory, HasRoles;
 
     protected $fillable = [
         'name',

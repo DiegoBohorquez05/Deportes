@@ -45,5 +45,16 @@ class DatabaseSeeder extends Seeder
         ]);
         Team::factory(4)->create();
         Player::factory(20)->create();
+
+        $this->call([
+            PermissionSeeder::class,
+        ]);
+        User::factory(2)->create();
+        $admin = User::find(1);
+        $admin->assignRole('admin');
+        $admin = User::find(2);
+        $admin->assignRole('coach');
+        $admin= Player::find();
+        $admin->assignRole('player');
     }
 }
