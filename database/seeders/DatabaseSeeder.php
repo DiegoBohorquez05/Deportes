@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Player;
 use App\Models\Sport;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -37,9 +39,11 @@ class DatabaseSeeder extends Seeder
             'country_of_origin' => fake()->country(),
         ]);
         Sport::create([
-            'name' => 'Tenis',
+            'name' => 'Microfutbol',
             'description' => fake() -> text(),
             'country_of_origin' => fake()->country(),
         ]);
+        Team::factory(4)->create();
+        Player::factory(20)->create();
     }
 }
