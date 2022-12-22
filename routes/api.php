@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('login',[AuthController::class, 'login']);
 
-Route::group('prefix','')
+Route::group(['prefix' => 'admins', 'middleware' => ['auth', 'role:admin']], function ($router){
+    Route::post('', [TeamController::class, 'create']);
+    // Route::get('/{id}', [CustomerController::class, 'show']);
+    // Route::put('/{id}', [CustomerController::class, 'update']);
+    // Route::post('/{id}', [CustomerController::class, 'destroy']);
+});

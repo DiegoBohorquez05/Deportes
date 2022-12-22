@@ -17,12 +17,12 @@ class TeamFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'name'=> fake()->randomElement(['Real Madrid','Barcelona','Juvestus','Psg']),
-            'fecha_creacion' =>fake()->numberBetween(10,50),
-            'team_average' => fake()->numberBetween(1,5),
-            'number_of_players' =>fake()->numberBetween(1,15),
-            'sport_id' => Sport::all()->random()->id,
-        ];
+        // return [
+        //     'name'=> fake()->randomElement(['Real Madrid','Barcelona','Juvestus','Psg']),
+        //     'fecha_creacion' =>fake()->numberBetween(10,50),
+        //     'team_average' => fake()->numberBetween(1,5),
+        //     'number_of_players' =>fake()->numberBetween(1,15),
+        //     'sport_id' => Sport::all()->random()->id,
+        // ];
     }
 }

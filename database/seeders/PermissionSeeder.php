@@ -33,7 +33,6 @@ class PermissionSeeder extends Seeder
 
         $roleAdmin = Role::create(['name' => 'admin']);
         $roleCoach = Role::create(['name' => 'coach']);
-        $rolePlayer = Role::create(['name' => 'coach']);
 
         $roleAdmin -> givePermissionto([
             'create teams',
@@ -42,10 +41,6 @@ class PermissionSeeder extends Seeder
 
         $roleCoach -> givePermissionto([
             'create players'
-        ]);
-
-        $rolePlayer -> givePermissionto([
-            'read players'
         ]);
     }
 }

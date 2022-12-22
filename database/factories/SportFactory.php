@@ -16,10 +16,10 @@ class SportFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'name' => fake() -> randomElement(['Soccer','basquetbol','tennis']),
-            'description' => fake() -> text(),
-            'country_of_origin' => fake() -> randomElement(['Asia','EEUU','UK'])
-        ];
+        // return [
+        //     'name' => fake() -> randomElement(['Soccer','basquetbol','tennis']),
+        //     'description' => fake() -> text(),
+        //     'country_of_origin' => fake() -> randomElement(['Asia','EEUU','UK'])
+        // ];
     }
 }
